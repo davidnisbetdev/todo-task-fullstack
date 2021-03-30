@@ -4,7 +4,7 @@ const MongoClient = require('mongodb').MongoClient
 const PORT = 8000
 
 let db,
-    dbConnectionStr = SERVERURLHERE,
+    dbConnectionStr = DATABASEURLHERE,
     dbName = 'tasks'
 
 MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
