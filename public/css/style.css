@@ -1,0 +1,37 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(237,238,247);
+    font-family: 'Dosis', sans-serif;
+}
+#mainContent {
+    background-color: rgb(109,48,130);
+    padding: 0 70px 20px 70px;
+    border-radius: 5%;
+    /* box-shadow: 2px 2px 5px black; */
+}
+h1 {
+    color: rgb(237,238,247);
+}
+
+h2 {
+    color: #edeef7;
+}
+
+#inputText, #inputRequired, #sendBtn {
+    height: 22px;
+    width: 75px;
+    border-style: hidden;
+    border-radius: 5%;
+}
+
+#taskBold {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+li, span {
+    color: #edeef7;
+}
