@@ -32,7 +32,7 @@ app.get('/', (req, res) => {
 })
 
 app.post('/addTask', (req, res) => {
-    db.collection('tasks').insertOne(req.body)
+    db.collection('tasks').insertOne({ taskName: req.body.taskName, dueDate: req.body.dueDate, completed: false })
     .then(result => {
         console.log('Task Added')
         res.redirect('/')
@@ -40,14 +40,52 @@ app.post('/addTask', (req, res) => {
     .catch(error => console.error(error))
 })
 
+
 app.delete('/deleteTask', (req, res) => {
-    db.collection('tasks').deleteOne({taskName: req.body.taskNameS})
+    db.collection('tasks')
+    .deleteOne({taskName: req.body.taskNameS})
     .then(result => {
         console.log('Task Deleted')
         res.json('Task Deleted')
     })
     .catch(error => console.error(error))
 })
+
+app.put('/updateTask', (req, res) => {
+    db.collection("tasks")
+      .updateOne({ taskName: req.body.taskNameS },
+        { $set: { completed: true} })
+      .then((result) => {
+        console.log("Task Updated");
+        res.json("Task Updated");
+      })
+      .catch((error) => console.error(error));
+})
+
+// app.put("/addOnePriority", (req, res) => {
+//   db.collection("tasks")
+//     .updateOne(
+//       {
+//         taskName: req.body.taskNameS,
+//         dueDate: req.body.dueDateS,
+//         taskPriority: req.body.taskPriorityS,
+//       },
+//       {
+//         $set: {
+//           priority: req.body.taskPriorityS + 1,
+//         },
+//       },
+//       {
+//         sort: { _id: -1 },
+//         upsert: true,
+//       }
+//     )
+//     .then((result) => {
+//       console.log("Added Priority");
+//       res.json("Added priority");
+//     })
+//     .catch((err) => console.error(err));
+// });
 
 app.listen(process.env.PORT || PORT, ()=>{
     console.log(`Server running on port ${PORT}`)

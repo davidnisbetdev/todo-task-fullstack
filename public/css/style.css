@@ -35,3 +35,7 @@ h2 {
 li, span {
     color: #edeef7;
 }
+
+.done {
+    text-decoration: line-through;
+}
