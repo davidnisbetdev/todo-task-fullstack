@@ -21,26 +21,27 @@
         <input id="sendBtn" type="submit" value="Add!">
     </form>
 </section>
-    <section id="todayTasks">
+<section id="todayTasks">
     <h2>Today's Tasks:</h2>
-    <ul class="tasks">
-        <% for(let i=0; i < info.length; i++) {%>
-            <li class="task">
-                <% if(info[i].completed === true) {%>
-                    <span id="taskBold" class="done"><%= info[i].taskName %></span><br>
-                    <span class="done">Due: </span><span class="done"><%= info[i].dueDate %></span>
-                <% }else{ %>
-                    <span id="taskBold"><%= info[i].taskName %></span><br>
-                    <span>Due: </span><span><%= info[i].dueDate %></span>
-                <% } %>
-                <span class="upDoot">&nbsp;&nbsp;<i class="fa fa-arrow-circle-up"></i></span>
-                <span class="completed">&nbsp;<i class="fa fa-check-circle"></i></span>
-                <span class="del">&nbsp;<i class="fa fa-minus-circle"></i></span>
-            </li>
-        <% } %>
-    </ul>
-</section>
+        <ul class="tasks">
+            <% for(let i=0; i < info.length; i++) {%>
+                <li class="task">
+                    <% if(info[i].completed === true) {%>
+                        <span id="taskBold" class="done"><%= info[i].taskName %></span><br>
+                        <span class="done">Due: </span><span class="done"><%= info[i].dueDate %></span>
+                    <% }else{ %>
+                        <span id="taskBold"><%= info[i].taskName %></span><br>
+                        <span>Due: </span><span><%= info[i].dueDate %></span>
+                    <% } %>
+                    <span class="upDoot">&nbsp;&nbsp;<i class="fa fa-arrow-circle-up"></i></span>
+                    <span class="completed">&nbsp;<i class="fa fa-check-circle"></i></span>
+                    <span class="del">&nbsp;<i class="fa fa-minus-circle"></i></span>
+                </li>
+            <% } %>
+        </ul>
     </section>
+</section>
+    <footer>Made by: <a href="https://davidnisbet.netlify.app" target="_blank">David Nisbet</a></footer>
         <script src="main.js"></script>
 </body>
 </html>

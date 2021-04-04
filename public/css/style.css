@@ -39,3 +39,8 @@ li, span {
 .done {
     text-decoration: line-through;
 }
+
+a, a:visited, a:active {
+    text-decoration: none;
+    color: rgb(109,48,130);
+}
