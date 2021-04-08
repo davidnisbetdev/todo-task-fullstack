@@ -62,31 +62,6 @@ app.put('/updateTask', (req, res) => {
       .catch((error) => console.error(error));
 })
 
-// app.put("/addOnePriority", (req, res) => {
-//   db.collection("tasks")
-//     .updateOne(
-//       {
-//         taskName: req.body.taskNameS,
-//         dueDate: req.body.dueDateS,
-//         taskPriority: req.body.taskPriorityS,
-//       },
-//       {
-//         $set: {
-//           priority: req.body.taskPriorityS + 1,
-//         },
-//       },
-//       {
-//         sort: { _id: -1 },
-//         upsert: true,
-//       }
-//     )
-//     .then((result) => {
-//       console.log("Added Priority");
-//       res.json("Added priority");
-//     })
-//     .catch((err) => console.error(err));
-// });
-
 app.listen(process.env.PORT || PORT, ()=>{
     console.log(`Server running on port ${PORT}`)
 })
